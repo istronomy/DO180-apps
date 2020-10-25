@@ -1,0 +1,58 @@
+Cloning "https://github.com/istronomy/DO180-apps" ...
+	Commit:	f7cd8963ef353d9173c3a21dcccf402f3616840b (Initial commit, including all apps previously in course)
+	Author:	Jordi Sola <someth2say@gmail.com>
+	Date:	Fri Oct 4 13:04:03 2019 +0200
+Caching blobs under "/var/cache/blobs".
+Getting image source signatures
+Copying blob sha256:fa92b53b7e2a0f05f79049d0c54dcca9b7e32f2bb01ad346d22145da90e26270
+Copying blob sha256:9e15a7292077ccf004dac54e3692b4b2b887bf95d30b3dda2a10ab7b26d32030
+Copying blob sha256:2bd25ca124579d6fce8668ff5d4ed83866d7e7438cb561a51ddde8cc40272822
+Copying blob sha256:5d011ac93e7456d4c646b0fbb53712598bda9a6b0d027b2be788016e078ded77
+Copying blob sha256:1323a241cc068f2816dd88f00168be73339471d6dc6eb2e6c761b63b734501b6
+Copying config sha256:5d42367af5eff157820e5424eb09495df7717c1e905457bfb0b1bbbeb53eda3d
+Writing manifest to image destination
+Storing signatures
+Generating dockerfile with builder image image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9bb7d5af155a162865ed10e33ea194f966b94974ce4cd6476f5fc26e5d2d8ff8
+STEP 1: FROM image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9bb7d5af155a162865ed10e33ea194f966b94974ce4cd6476f5fc26e5d2d8ff8
+STEP 2: LABEL "io.openshift.build.commit.date"="Fri Oct 4 13:04:03 2019 +0200"       "io.openshift.build.commit.id"="f7cd8963ef353d9173c3a21dcccf402f3616840b"       "io.openshift.build.commit.ref"="s2i"       "io.openshift.build.commit.message"="Initial commit, including all apps previously in course"       "io.openshift.build.source-location"="https://github.com/istronomy/DO180-apps"       "io.openshift.build.source-context-dir"="php-helloworld"       "io.openshift.build.image"="image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:9bb7d5af155a162865ed10e33ea194f966b94974ce4cd6476f5fc26e5d2d8ff8"       "io.openshift.build.commit.author"="Jordi Sola <someth2say@gmail.com>"
+STEP 3: ENV OPENSHIFT_BUILD_NAME="php-helloworld-1"     OPENSHIFT_BUILD_NAMESPACE="y-isobe-s2i"     OPENSHIFT_BUILD_SOURCE="https://github.com/istronomy/DO180-apps"     OPENSHIFT_BUILD_REFERENCE="s2i"     OPENSHIFT_BUILD_COMMIT="f7cd8963ef353d9173c3a21dcccf402f3616840b"
+STEP 4: USER root
+STEP 5: COPY upload/src /tmp/src
+STEP 6: RUN chown -R 1001:0 /tmp/src
+STEP 7: USER 1001
+STEP 8: RUN /usr/libexec/s2i/assemble
+---> Installing application source...
+=> sourcing 20-copy-config.sh ...
+---> 12:48:50     Processing additional arbitrary httpd configuration provided by s2i ...
+=> sourcing 00-documentroot.conf ...
+=> sourcing 50-mpm-tuning.conf ...
+=> sourcing 40-ssl-certs.sh ...
+STEP 9: CMD /usr/libexec/s2i/run
+STEP 10: COMMIT temp.builder.openshift.io/y-isobe-s2i/php-helloworld-1:ba0a235e
+time="2020-10-25T12:48:50Z" level=info msg="Image operating system mismatch: image uses OS \"\"+architecture \"\", expecting one of \"linux+amd64\""
+Getting image source signatures
+Copying blob sha256:7eb0eb5e80b46719b542cee69dee502ae7b77d55fcff5ad2593703fb3dd3c6bc
+Copying blob sha256:48cf05bc9e5b57b151fce703df4e735cbb56c256bc45280eb818745402c4dbc5
+Copying blob sha256:d22950239294ca8db1934e68cf1476a8a34d90bffec03ffed84a8628424682a6
+Copying blob sha256:9e45f131e9de2869ce21d1e331c5d09e31ab3e6efc6a183ef5dd30a402d8daa7
+Copying blob sha256:1afc82211bae537d01a379a2b1ce6557c552ed293d06b2f9e0c709ca079d6a1a
+Copying blob sha256:27583e741c30cfe75831db2c9b03fffd2992a0093666fd1a736565cc4f651d1a
+Copying config sha256:82a878192ff9d2a97f586f9f78bcfb810fa9d99c31438bc8723009eda06dc841
+Writing manifest to image destination
+Storing signatures
+--> 82a878192ff
+82a878192ff9d2a97f586f9f78bcfb810fa9d99c31438bc8723009eda06dc841
+
+Pushing image image-registry.openshift-image-registry.svc:5000/y-isobe-s2i/php-helloworld:latest ...
+Getting image source signatures
+Copying blob sha256:27583e741c30cfe75831db2c9b03fffd2992a0093666fd1a736565cc4f651d1a
+Copying blob sha256:5d011ac93e7456d4c646b0fbb53712598bda9a6b0d027b2be788016e078ded77
+Copying blob sha256:fa92b53b7e2a0f05f79049d0c54dcca9b7e32f2bb01ad346d22145da90e26270
+Copying blob sha256:9e15a7292077ccf004dac54e3692b4b2b887bf95d30b3dda2a10ab7b26d32030
+Copying blob sha256:1323a241cc068f2816dd88f00168be73339471d6dc6eb2e6c761b63b734501b6
+Copying blob sha256:2bd25ca124579d6fce8668ff5d4ed83866d7e7438cb561a51ddde8cc40272822
+Copying config sha256:82a878192ff9d2a97f586f9f78bcfb810fa9d99c31438bc8723009eda06dc841
+Writing manifest to image destination
+Storing signatures
+Successfully pushed image-registry.openshift-image-registry.svc:5000/y-isobe-s2i/php-helloworld@sha256:3f5a68e413814988a8f48cd57fea0fde8ab09e86e5c332bdb861ef46b89c4960
+Push successful
